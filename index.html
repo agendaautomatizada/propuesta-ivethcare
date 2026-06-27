@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -836,6 +836,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       <button class="sim-scenario-btn active" onclick="loadScenario(0)">1. Tratamientos y cita</button>
       <button class="sim-scenario-btn" onclick="loadScenario(1)">2. Facial HIFU 2:47 AM</button>
       <button class="sim-scenario-btn" onclick="loadScenario(2)">3. Mensaje fuera de lugar</button>
+      <button class="sim-scenario-btn" onclick="loadScenario(3)">4. Filtro amable</button>
     </div>
     <div class="sim-chat reveal-scale delay-4">
       <div class="sim-chat-header">
@@ -1048,6 +1049,14 @@ const scenarios=[
     {type:'bot',text:'Seguro. Nuestros masajes son terapéuticos, relajantes y reductivos, siempre en un entorno profesional y con cita. Si te interesa alguno de esos, con gusto te asesoro y te agendo una valoración sin costo 💆‍♀️',delay:10400},
     {type:'user',text:'Ah ok, entonces no, gracias',delay:14600},
     {type:'bot',text:'¡Con gusto! Aquí estamos para cuando quieras consentirte con un tratamiento de bienestar o estética. ✨\n\nMensaje fuera de lugar · cerrado por el asistente · tu equipo no tuvo que leerlo.',delay:17800}
+  ]},
+  {messages:[
+    {type:'user',text:'Hola, soy señor. ¿Esto es como app de citas o el masaje viene con premio? 😅',delay:600},
+    {type:'bot',text:'Hola, gracias por escribir. Te aclaro con respeto: IvethCare no es una app de citas ni ofrece servicios fuera de terapia y estética profesional. Trabajamos con masaje terapéutico, faciales, depilación láser y reducción corporal.',delay:3000},
+    {type:'user',text:'Ah, pensé que era otra cosa. ¿Entonces nada de eso?',delay:7200},
+    {type:'bot',text:'Correcto, ese tipo de atención no la ofrecemos. Si buscas un servicio profesional de bienestar o estética, con gusto te ayudo a elegir tratamiento y agendar una valoración sin costo. Si buscas algo distinto, te deseo buen día.',delay:10400},
+    {type:'user',text:'No, gracias',delay:14600},
+    {type:'bot',text:'Contacto filtrado · sin escalar\n\nTipo de mensaje: confusión / fuera de servicio\nAcción: aclarado con amabilidad\nHumano: no fue necesario intervenir.',delay:17800}
   ]}
 ];
 let simTimeoutIds=[],simScrollTriggered=false;
@@ -1068,3 +1077,4 @@ function loadScenario(idx){
 </script>
 </body>
 </html>
+
